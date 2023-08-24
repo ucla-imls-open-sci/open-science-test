@@ -2,8 +2,10 @@
 site: sandpaper::sandpaper_site
 ---
 
-This is a new lesson built with [The Carpentries Workbench][workbench]. 
+## Learning Objectives
 
+After attending the training, participants will be able to:
 
-[workbench]: https://carpentries.github.io/sandpaper-docs
-
+-   collaboratively develop and publish lessons using The Carpentries lesson infrastructure (aka [The Carpentries Workbench][workbench]): lesson template, GitHub, GitHub Pages, etc.
+-   identify and characterize the target audience for a lesson.
+-   define SMART learning objectives.
