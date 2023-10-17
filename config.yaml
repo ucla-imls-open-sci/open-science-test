@@ -14,7 +14,7 @@ carpentry: 'incubator'
 title: 'My Open Science' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # 2023-08-24
+created: 2023-08-24
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries' # FIXME
