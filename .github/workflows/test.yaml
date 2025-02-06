@@ -9,18 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone imls-tools
-        run: git clone https://github.com/ucla-imls-open-sci/imls-tools
-
-      - name: Checkout current repository into subfolder
+      - name: Checkout current repository
         uses: actions/checkout@v2
-        with:
-          path: my-repo   # put your own repo in 'my-repo' directory
+
+      - name: Clone imls-tools into a subfolder
+        run: |
+          git clone https://github.com/ucla-imls-open-sci/imls-tools tools-folder
 
       - name: Make script executable (only if needed)
-        run: chmod +x imls-tools/content-checker/content_checker.sh
+        run: chmod +x tools-folder/content-checker/content_checker.sh
 
       - name: Run the Content Checker
         run: |
-          # Point the -P argument to where your repo is checked out
-          ./imls-tools/content-checker/content_checker.sh -P my-repo
+          ./tools-folder/content-checker/content_checker.sh -P .
