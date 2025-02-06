@@ -7,15 +7,20 @@ jobs:
   check-content:
     name: "Check the content of the lesson"
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
-      - name: Clone Repository
-        run: |
-          git clone https://github.com/ucla-imls-open-sci/imls-tools
-      - name: Checkout repository
+      - name: Clone imls-tools
+        run: git clone https://github.com/ucla-imls-open-sci/imls-tools
+
+      - name: Checkout current repository into subfolder
         uses: actions/checkout@v2
+        with:
+          path: my-repo   # put your own repo in 'my-repo' directory
+
+      - name: Make script executable (only if needed)
+        run: chmod +x imls-tools/content-checker/content_checker.sh
+
       - name: Run the Content Checker
         run: |
-          ./imls-tools/content-checker/content_checker.sh -P ./
-
+          # Point the -P argument to where your repo is checked out
+          ./imls-tools/content-checker/content_checker.sh -P my-repo
