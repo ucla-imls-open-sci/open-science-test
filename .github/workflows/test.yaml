@@ -14,5 +14,5 @@ jobs:
 
       - name: Run the Content Checker
         run: | 
-          git clone https://github.com/ucla-imls-open-sci/imls-tools
+          git clone https://github.com/ucla-imls-open-sci/imls-tools ./imls-tools
           ./imls-tools/content-checker/content_checker.sh -P ./
