@@ -1,0 +1,21 @@
+name: "Test Content Checker"
+
+on:
+  push:
+
+jobs:
+  check-content:
+    name: "Check the content of the lesson"
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Clone Repository
+        run: |
+          git clone https://github.com/ucla-imls-open-sci/imls-tools
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run the Content Checker
+        run: |
+          ./imls-tools/content-checker/content_checker.sh -P ./
+
