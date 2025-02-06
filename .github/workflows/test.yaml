@@ -16,10 +16,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: ucla-imls-open-sci/imls-tools
+          path: imls-tools
 
       - name: Make script executable (only if needed)
-        run: chmod +x ./tools-folder/content-checker/content_checker.sh
+        run: chmod +x imls-tools/content-checker/content_checker.sh
 
       - name: Run the Content Checker
         run: |
-          ./tools-folder/content-checker/content_checker.sh -P .
+          imls-tools/content-checker/content_checker.sh -P .
