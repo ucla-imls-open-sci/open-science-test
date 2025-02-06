@@ -17,7 +17,7 @@ jobs:
           git clone https://github.com/ucla-imls-open-sci/imls-tools tools-folder
 
       - name: Make script executable (only if needed)
-        run: chmod +x tools-folder/content-checker/content_checker.sh
+        run: chmod +x ./tools-folder/content-checker/content_checker.sh
 
       - name: Run the Content Checker
         run: |
