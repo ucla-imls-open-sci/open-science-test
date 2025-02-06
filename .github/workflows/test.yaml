@@ -13,8 +13,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Clone imls-tools into a subfolder
-        run: |
-          git clone https://github.com/ucla-imls-open-sci/imls-tools tools-folder
+        uses: actions/checkout@v2
+        with:
+          repository: ucla-imls-open-sci/imls-tools
 
       - name: Make script executable (only if needed)
         run: chmod +x ./tools-folder/content-checker/content_checker.sh
