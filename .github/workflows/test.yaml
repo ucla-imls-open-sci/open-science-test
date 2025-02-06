@@ -11,20 +11,8 @@ jobs:
     steps:
       - name: Checkout current repository
         uses: actions/checkout@v2
-        with:
-          path: ./repo
-
-      - name: Clone imls-tools into a subfolder
-        uses: actions/checkout@v2
-        with:
-          repository: ucla-imls-open-sci/imls-tools
-          path: ./imls-tools
-
-      - name: Make script executable (only if needed)
-        working-directory: ./imls-tools
-        run: chmod +x ./content-checker/content_checker.sh
 
       - name: Run the Content Checker
-        working-directory: ./imls-tools
-        run: |
-          ./content-checker/content_checker.sh -P ../repo
+        run: | 
+          git clone https://github.com/ucla-imls-open-sci/imls-tools
+          ./imls-tools/content-checker/content_checker.sh -P ./
